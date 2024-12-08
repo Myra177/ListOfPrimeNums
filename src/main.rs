@@ -1,11 +1,12 @@
 use anyhow::Result;
 use CrypticRust::prelude::Primality;
-use CrypticRust::primality;
 
 fn main() {
     let only_primes = only_primes();
     println!("My List:\n");
-    only_primes.into_iter().for_each(|item| println!("{:?}", item));
+    only_primes
+        .into_iter()
+        .for_each(|item| println!("{:?}", item));
 }
 
 fn prime_nums() -> PrimeList {
@@ -13,9 +14,10 @@ fn prime_nums() -> PrimeList {
 }
 
 fn only_primes() -> Result<PrimeList> {
-    let numbers: Vec<usize> = (0..100).into_iter().collect();
+    let numbers: Vec<usize> = (0..100).collect();
     PrimeList::new(numbers).prune()
 }
+
 
 #[derive(Clone, Debug, PartialOrd, PartialEq)]
 pub struct PrimeList {
@@ -35,7 +37,7 @@ impl PrimeList {
 
     fn prune(self) -> Result<PrimeList> {
         // Return only the prime numbers within self
-      let list =  self.list.into_iter().filter(|i|i.primality()).collect();
+        let list = self.list.into_iter().filter(|i| i.primality()).collect();
 
         Ok(PrimeList { list })
     }
