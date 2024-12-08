@@ -5,3 +5,5 @@ authors = ["Cassandra Pearson <cnegrich@gmail.com>"]
 edition = "2021"
 
 [dependencies]
+anyhow = "1.0.94"
+CrypticRust = { git = "https://github.com/cassiepearson/CrypticRust.git"}
