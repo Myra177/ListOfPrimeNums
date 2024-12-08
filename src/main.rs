@@ -1,5 +1,5 @@
 use anyhow::Result;
-use CrypticRust::prelude::Primality;
+use crypticRust::prelude::Primality;
 
 fn main() {
     let only_primes = only_primes();
